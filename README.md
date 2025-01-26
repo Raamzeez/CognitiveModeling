@@ -1,3 +1,5 @@
+<img src="logo.png" alt="Alt Text" width="300" height="300">
+
 # Cognitive Modeling (COGS 4210)
 Public repository for Cognitive Modeling course @ RPI
 
