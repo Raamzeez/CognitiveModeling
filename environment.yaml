@@ -13,3 +13,4 @@ dependencies:
       - notebook >= 7.3.2
       - pystan >= 3.10.0
       - tensorflow >= 2.18.0
+      - arviz >= 0.21.0
