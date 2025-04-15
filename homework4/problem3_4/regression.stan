@@ -21,21 +21,13 @@ model {
 
     // Likelihood
     for (n in 1:N) {
-        real i = 0;
-        for (k in 1:K) {
-            i += x[n, k] * beta[k];
-        }
-        y[n] ~ normal(alpha + i, sigma);
+        y[n] ~ normal(alpha + dot_product(x[n], beta), sigma);
     }
 }
 
 generated quantities {
     vector[M] y_pred;
     for (m in 1:M) {
-        real i = 0;
-        for (k in 1:K) {
-            i += x_test[m, k] * beta[k];
-        }
-        y_pred[m] = normal_rng(alpha + i, sigma);
+        y_pred[m] = normal_rng(alpha + dot_product(x_test[m], beta), sigma);
     }
 }
